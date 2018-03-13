@@ -1,0 +1,37 @@
+/**status.wxss**/
+
+.multiple-select {
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.multiple-select navigator {
+  flex: 0 0 33.3%;
+  max-width: 33.3%;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.multiple-select text {
+  display: block;
+  border: 2rpx solid #ddd;
+  line-height: 120rpx;
+  color: #666;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 4rpx;
+}
+
+.multiple-select text.active {
+  background: #f7982a;
+  color: #fff;
+  border-color: #f7982a;
+}
+
+.group-body {
+  background: #fff;
+  border-top: 1rpx solid #ddd;
+}
+
+

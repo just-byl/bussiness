@@ -1,0 +1,56 @@
+{
+  "pages": [
+        
+            "pages/index/index",
+            "pages/login/login",        
+    "pages/my/index",
+    "pages/status/status",
+    "pages/status/list",
+    "pages/my/schedule",
+    "pages/my/info",
+    "pages/my/list",
+    "pages/create/create",
+    "pages/create/edit",
+    "pages/create/detail",
+    "pages/switchcity/switchcity",
+    "pages/my/changePwd"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f4de3b",
+    "navigationBarTitleText": "出差管理",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#ddc40b",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/home.png",
+        "selectedIconPath": "image/icon/home1.png"
+      },
+      {
+        "pagePath": "pages/status/status",
+        "text": "出差状态",
+        "iconPath": "image/icon/status.png",
+        "selectedIconPath": "image/icon/status1.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "image/icon/account.png",
+        "selectedIconPath": "image/icon/account1.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

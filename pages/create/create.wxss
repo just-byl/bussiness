@@ -1,0 +1,23 @@
+/**create.wxss**/
+
+.page__bd {
+  background: #efefef;
+}
+
+.weui-cells__title {
+  padding-top: 0.3rem;
+  margin-top: 0;
+}
+
+.weui-label {
+  color: black;
+}
+
+.weui-btn {
+  background: #f4de3b !important;
+  color: #000 !important;
+}
+
+.weui-input {
+  overflow: hidden;
+}

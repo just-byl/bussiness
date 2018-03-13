@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<view class="page">
+  <!--页头-->
+  <view class="page__hd">
+    <swiper class="index-banner" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
+      <block wx:for="{{imgUrls}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" mode="aspectFill" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--主体-->
+  <view class="page__bd">
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <navigator wx:for="{{listData}}" wx:for-index="idx" wx:key="k" wx:for-item="item" url="{{item.url}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title list_title">
+              <!--<text class="list_start">{{item.registerDate}}</text>-->
+              <text class="list_start">【{{item.deptName}}】{{item.leaveName}}</text>
+              <view class="list_tm">
+                <!--<image src="/image/icon/location.png" class="to1"></image>-->
+                <text>{{item.location}}</text>
+              </view>
+            </view>
+            <view class="weui-media-box__desc list_desc">
+              <text class="list_start">出差时间：</text>
+              <text class="list_start">{{item.startDate}} ~ {{item.endDate}}</text>
+            </view>
+            <!--<view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">
+                  <text class="firsttext">安排人：{{item.arrange}}</text>
+                  <text>创建时间：{{item.registerDate}}</text>
+                </view>
+              </view>-->
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="page__bd">
+  <view class="weui-loadmore" bindtap="onReachBottom" wx:if="{{!nomore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" wx:if="{{nomore}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">没有更多了~</view>
+  </view>
+</view>
+
+<navigator url="/pages/create/create" wx:if="{{isPlan>0}}">
+  <view class="add" bindtap="add">
+    <image src="/image/icon/adddy.png"></image>
+  </view>
+</navigator>
+
+
+
+
+<!--<swiper class="index-banner" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
+      <block wx:for="{{imgUrls}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" mode="aspectFill" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>-->

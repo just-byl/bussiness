@@ -1,0 +1,90 @@
+<!--create.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <!--弹出框-->
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>
+    <form bindsubmit="formSubmit">
+      <view class="weui-cells__title">确认出差人信息</view>
+      <view class="weui-cells weui-cells_after-title">
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">出差人</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="selector" value="{{index}}" range="{{rangeName}}" range-key="{{'userName'}}" bindchange="setName">
+              <input type="text" name="userId" value="{{userId}}" hidden='true' />
+              <view class="weui-input">{{leaveName}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">所在科室</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="selector" value="{{index}}" range="{{rangeDept}}" range-key="{{'deptName'}}" bindchange="setDept">
+            <input type="text" name="deptId" value="{{deptId}}" hidden='true' />
+            <!--<input class="weui-input" type="text" name="deptName" value="{{deptName}}" disabled='true' />-->
+            <view class="weui-input">{{deptName}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">目的地</view>
+          </view>
+          <view class="weui-cell__bd">
+            <navigator url="/pages/switchcity/switchcity">
+              <view class="add" bindtap="add">
+                <input class="weui-input" type="text" name="location" value="{{location}}" placeholder="请选择目的地" />
+              </view>
+            </navigator>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">开始日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" id="startDate" name="startDate" value="{{startDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
+              <view class="weui-input">{{startDate}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">结束日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" id="endDate" name="endDate" value="{{endDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
+              <view class="weui-input">{{endDate}}</view>
+            </picker>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务安排人</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input type="text" name="userCode" value="{{userCode}}" hidden='true' />
+            <input class="weui-input" type="text" name="arrangeName" value="{{arrangeName}}" disabled="true" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" formType="submit">确定</button>
+      </view>
+    </form>
+  </view>
+</view>

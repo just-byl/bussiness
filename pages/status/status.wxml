@@ -1,0 +1,41 @@
+<view class="page">
+  <!--主体-->
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item.tabtitle}}</view>
+            <view class="weui-navbar__title">( {{item.tabnum}} )</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="width:{{sliderWidth}}px;transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="weui-panel__bd">
+            <view class="group-body">
+              <view class="multiple-select">
+                <navigator wx:for="{{checitems}}" wx:for-index="idx" wx:key="k" wx:for-item="item" url="../status/list?status=出差中&location={{item.location}}" hover-class="weui-cell_active">
+                  <text>{{item.location}}({{item.leavingCount}})</text>
+                </navigator>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="weui-panel__bd">
+            <view class="group-body">
+              <view class="multiple-select">
+                <navigator wx:for="{{checitems1}}" wx:for-index="idx" wx:key="k" wx:for-item="item" url="../status/list?status=计划出差&location={{item.location}}" hover-class="weui-cell_active">
+                  <text>{{item.location}}({{item.planCount}})</text>
+                </navigator>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

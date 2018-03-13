@@ -1,0 +1,29 @@
+/**create.wxss**/
+.page__bd{background: #efefef;}
+.weui-cells__title{padding-top:.3rem;margin-top:0;}
+.weui-label{color:black}
+.weui-btn{background: #f4de3b!important;color:#000!important;}
+.weui-input{overflow:hidden;}
+.table {
+  width: 98%;
+  height: 93%;
+}
+.tdLabel {
+  width: 30%;
+}
+.trPers {
+  padding-top: 10rpx;
+  display: flex;
+  padding-left:30rpx;
+  height: 80%;
+}
+.tdPers {
+  padding-left: 10rpx;
+  border: 1rpx solid darkgray;
+  float: right;
+  height: 20%;
+}
+.userinfo button {
+  background-color:green;
+  margin-top:30rpx;
+}
